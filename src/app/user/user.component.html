@@ -1,0 +1,22 @@
+<form [formGroup]="userForm">
+    <label>Pr&eacute;nom:</label><br>
+    <input formControlName="firstname" ><br>
+    <div *ngIf="userForm.controls.firstname.dirty  &&
+    userForm.controls.firstname.errors &&
+    userForm.controls.firstname.errors.required">Le prénom est Obligatoire</div>
+    <br>
+    <label>Nom:</label><br>
+    <input formControlName="name" ><br>
+    <div *ngIf="userForm.controls.name.dirty  &&
+    userForm.controls.name.errors &&
+    userForm.controls.name.errors.required">Le nom est Obligatoire</div>
+    <br>
+    <label>Email:</label><br>
+    <input formControlName="email" ><br>
+    <div *ngIf="userForm.controls.email.dirty  &&
+    userForm.controls.email.errors &&
+    userForm.controls.email.errors.required">L'email est Obligatoire</div>
+    <br>
+    <button [disabled]="userForm.invalid" (click)="addUser(userForm.value)">Validate</button>
+</form>
+<app-user-list [userItems]="users"></app-user-list>

@@ -1,0 +1,6 @@
+<ul>
+        <li *ngFor="let userIt of userItems">
+          {{ userIt.id+" "+ userIt.firstname+" "+userIt.name+" "+userIt.email }} 
+          <button routerLink="/user/{{userIt.id}}/edit"> Edit user</button>
+        </li>
+      </ul>
